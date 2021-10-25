@@ -9,15 +9,36 @@ body{
 }
 .container{
     display: flex;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    
+}
+
+.chart{
+    width: 80%;
 }
 .coins{
-    margin: 20px;
+    width: 12%;
+    margin-right: 20px;
+}
+.crypto-value{
+    float: right;
+    padding-right: 10%;
+    color: black;
+}
+.percentage{
+    color: rgb(57, 223, 57);
 }
 .coins ul{
     padding: 0px;
 }
 .coins ul li{
     list-style: none;
-    padding: 0 100px 20px 0;
+    padding: 20px 0 ;
     font-weight: 700;
+}
+a{
+    text-decoration: none;
+    color: blue;
 }
