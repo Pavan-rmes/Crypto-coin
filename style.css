@@ -1,0 +1,23 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: left;
+}
+.head{
+    background-color: blue;
+    text-align: center;
+    color: white;
+}
+.container{
+    display: flex;
+}
+.coins{
+    margin: 20px;
+}
+.coins ul{
+    padding: 0px;
+}
+.coins ul li{
+    list-style: none;
+    padding: 0 100px 20px 0;
+    font-weight: 700;
+}
