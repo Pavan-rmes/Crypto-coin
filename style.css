@@ -10,17 +10,35 @@ body{
 .container{
     display: flex;
     width: 100%;
-    height: auto;
-    overflow: hidden;
+    height: auto; 
     
 }
-
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f3f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 .chart{
-    width: 80%;
+    width: 85%;
 }
 .coins{
     width: 12%;
     margin-right: 20px;
+    
 }
 .crypto-value{
     float: right;
@@ -32,6 +50,8 @@ body{
 }
 .coins ul{
     padding: 0px;
+    overflow: scroll;
+    height: 600px; 
 }
 .coins ul li{
     list-style: none;
@@ -41,4 +61,40 @@ body{
 a{
     text-decoration: none;
     color: blue;
+}
+.nav{
+    display: none;
+}
+@media(max-width:1200px){
+    .container{
+        font-size: 14PX;
+    }
+}
+@media(max-width:1050px){
+    .container{
+        font-size: 12PX;
+    }
+}
+@media(max-width:900px){
+    .container{
+        font-size: 12PX;
+    }
+    .coin-hidden{
+        display:none;
+    }
+    .chart{
+        width: 97%;
+    }
+    .coins{
+        width: 3%;
+        transition: 0.3s;
+    }
+    .nav{
+        margin-top: 700%;
+        display:block;
+        border-left: white;
+        background-color: rgb(12, 12, 240);
+        color: white;
+        padding: 8px;
+    }
 }
