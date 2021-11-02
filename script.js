@@ -12,7 +12,7 @@ async function getAllCoin(){
     }
 }
 
-
+var coinArray =[]
 
 getAllCoin()
 .then((data)=>{
@@ -22,10 +22,16 @@ getAllCoin()
     var coinNames = document.querySelector('ul.coin-hidden')
     let list = document.createElement('li')
     roundOff = Math.round(parseFloat(data[i].priceUsd) *100)/100
-    list.innerHTML=`<a href="#">${data[i].symbol}</a> <span class="crypto-value">${roundOff}</span>`
+    coinArray.push(data[i].id)
+    list.innerHTML=`<a href="#" id=${data[i].id}>${data[i].symbol}</a> <span class="crypto-value">${roundOff}</span>`
     coinNames.appendChild(list)
     coinNames.appendChild(document.createElement('hr'))
     }
+    coinArray.forEach(element => {
+        document.getElementById(element).addEventListener('click',()=>{
+            coinGraph('bitcoin')
+        })
+    });
 })
 .catch((err)=>{
     var body = document.querySelector('body')
@@ -37,10 +43,11 @@ getAllCoin()
 
 
 
-async function getPerticularCoin()
+
+async function getPerticularCoin(coin)
 {
     try {
-        let coinData = await fetch(`https://api.coincap.io/v2/assets/bitcoin/history?interval=d1`)
+        let coinData = await fetch(`https://api.coincap.io/v2/assets/${coin}/history?interval=d1`)
         let singleCoin = await coinData.json()
         return singleCoin.data
         
@@ -51,38 +58,41 @@ async function getPerticularCoin()
     }
 }
 
-getPerticularCoin()
-.then((data)=>{
-    console.log(data)
-    let coinDate =[]
-    let coinValue=[]
+coinGraph('bitcoin')
+function coinGraph(coin){ 
+    console.log(coin)
+    getPerticularCoin(coin)
+    .then((data)=>{
+        console.log(data)
+        let coinDate =[]
+        let coinValue=[]
 
-    for(i in data)
-    {
-        let everyDate =data[i].date
-        everyDate =  everyDate.split("T")[0]
-        coinDate.push(everyDate)
-        coinValue.push(data[i].priceUsd)
-    }
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: coinDate,
-            datasets: [{
-                label: '# of Votes',
-                data: coinValue
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+        for(i in data)
+        {
+            let everyDate =data[i].date
+            everyDate =  everyDate.split("T")[0]
+            coinDate.push(everyDate)
+            coinValue.push(data[i].priceUsd)
+        }
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: coinDate,
+                datasets: [{
+                    label: 'BTC',
+                    data: coinValue
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
 
-})
+    })
 
-
+}
