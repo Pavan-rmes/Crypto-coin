@@ -1,3 +1,5 @@
+
+//function to get all the coins from the api 
 async function getAllCoin(){
     try{
        let getCoinList = await fetch(`https://api.coincap.io/v2/assets`)
@@ -12,6 +14,9 @@ async function getAllCoin(){
     }
 }
 
+
+
+//To display first 20 coin on the screen
 var coinArray =[]
 
 getAllCoin()
@@ -21,6 +26,7 @@ getAllCoin()
     {
     var coinNames = document.querySelector('ul.coin-hidden')
     let list = document.createElement('li')
+    //round of to 2 decimal places
     roundOff = Math.round(parseFloat(data[i].priceUsd) *100)/100
     coinArray.push(data[i].id)
     list.innerHTML=`<a href="#" id=${data[i].id}>${data[i].symbol}</a> <span class="crypto-value">${roundOff}</span>`
@@ -43,7 +49,7 @@ getAllCoin()
 
 
 
-
+//fetch the chart of the perticular coin
 async function getPerticularCoin(coin)
 {
     try {
@@ -58,6 +64,8 @@ async function getPerticularCoin(coin)
     }
 }
 
+
+//Display the chart of the perticular coin using chart js
 coinGraph('bitcoin')
 function coinGraph(coin){ 
     console.log(coin)
@@ -98,6 +106,8 @@ function coinGraph(coin){
 }
 
 
+
+//Navigation, where coins will be display on one click and hides on other click
 var count =0
 
 function showHide()
