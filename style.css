@@ -37,8 +37,6 @@ body{
 }
 .coins{
     width: 12%;
-    margin-right: 20px;
-    
 }
 .crypto-value{
     float: right;
@@ -63,7 +61,15 @@ a{
     color: blue;
 }
 .nav{
-    display: none;
+    margin-top: 25%;
+    margin-right: 20px;
+}
+.nav button{
+    background-color:rgb(73, 73, 233);
+    padding: 8px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: 2s;
 }
 @media(max-width:1200px){
     .container{
@@ -79,9 +85,9 @@ a{
     .container{
         font-size: 12PX;
     }
-    .coin-hidden{
+    /* .coin-hidden{
         display:none;
-    }
+    } */
     .chart{
         width: 97%;
     }
@@ -89,12 +95,12 @@ a{
         width: 3%;
         transition: 0.3s;
     }
-    .nav{
+    /* .nav{
         margin-top: 700%;
         display:block;
         border-left: white;
         background-color: rgb(12, 12, 240);
         color: white;
         padding: 8px;
-    }
+    } */
 }

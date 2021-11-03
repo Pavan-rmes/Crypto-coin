@@ -96,3 +96,24 @@ function coinGraph(coin){
     })
 
 }
+
+
+var count =0
+
+function showHide()
+{
+    let coins = document.getElementsByClassName('coins')[0]
+    if(count===0){
+        count =1
+        coins.style.display="none"
+        document.getElementById('nav-button').innerHTML=">"
+    }
+    else{
+        count=0
+        coins.style.display="grid"
+        document.getElementById('nav-button').innerHTML="<"
+    }
+    
+}
+
+
