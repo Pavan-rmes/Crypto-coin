@@ -11,12 +11,17 @@
 <body>
     <h1 class="head">Crypto Coins</h1>
     <div class="container">
-        <div class="coins">
-            <p class="coin-hidden">Cryptourrencies</p>
-            <ul class="coin-hidden"></ul>
-        </div>
         <div class="nav">
-            <button onclick="showHide()" id='nav-button'><</button>
+            <span onclick="showHide()" id='nav-button'>
+                <svg style="width: 30px;height: 30px; cursor: pointer;" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </span>
+        </div>
+        <div class="sideNav" >
+            <div class="coins">
+                <ul class="coin-hidden"></ul>
+            </div>
         </div>
         <div class="chart">
             <canvas id="myChart" ></canvas>

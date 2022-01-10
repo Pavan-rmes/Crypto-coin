@@ -31,10 +31,10 @@ getAllCoin()
     coinArray.push(data[i].id)
     list.innerHTML=`<a href="#" id=${data[i].id}>${data[i].symbol}</a> <span class="crypto-value">${roundOff}</span>`
     coinNames.appendChild(list)
-    coinNames.appendChild(document.createElement('hr'))
     }
     coinArray.forEach(element => {
         document.getElementById(element).addEventListener('click',()=>{
+            console.log("pavan")
             coinGraph('bitcoin')
         })
     });
@@ -67,6 +67,7 @@ async function getPerticularCoin(coin)
 
 //Display the chart of the perticular coin using chart js
 coinGraph('bitcoin')
+
 function coinGraph(coin){ 
     console.log(coin)
     getPerticularCoin(coin)
@@ -112,16 +113,14 @@ var count =0
 
 function showHide()
 {
-    let coins = document.getElementsByClassName('coins')[0]
+    let coins = document.getElementsByClassName('sideNav')[0]
     if(count===0){
         count =1
         coins.style.display="none"
-        document.getElementById('nav-button').innerHTML=">"
     }
     else{
         count=0
         coins.style.display="grid"
-        document.getElementById('nav-button').innerHTML="<"
     }
     
 }

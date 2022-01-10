@@ -1,106 +1,27 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    justify-content: left;
-}
-.head{
-    background-color: blue;
-    text-align: center;
-    color: white;
-}
-.container{
-    display: flex;
-    width: 100%;
-    height: auto; 
-    
-}
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f3f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
-.chart{
-    width: 85%;
-}
-.coins{
-    width: 12%;
-}
-.crypto-value{
-    float: right;
-    padding-right: 10%;
-    color: black;
-}
-.percentage{
-    color: rgb(57, 223, 57);
-}
-.coins ul{
-    padding: 0px;
-    overflow: scroll;
-    height: 600px; 
-}
-.coins ul li{
+li{
     list-style: none;
-    padding: 20px 0 ;
-    font-weight: 700;
 }
+
 a{
     text-decoration: none;
     color: blue;
 }
-.nav{
-    margin-top: 25%;
-    margin-right: 20px;
+body{
+    font-family: Arial, Helvetica, sans-serif;
 }
-.nav button{
-    background-color:rgb(73, 73, 233);
-    padding: 8px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    transition: 2s;
+.sideNav{
+    display: flex;
+    padding: 1%;
+    flex-direction: column;
+    align-items: flex-start;
+    position:absolute;
+    background-color: aliceblue;
 }
-@media(max-width:1200px){
-    .container{
-        font-size: 14PX;
-    }
-}
-@media(max-width:1050px){
-    .container{
-        font-size: 12PX;
-    }
-}
-@media(max-width:900px){
-    .container{
-        font-size: 12PX;
-    }
-    /* .coin-hidden{
-        display:none;
-    } */
-    .chart{
-        width: 97%;
-    }
-    .coins{
-        width: 3%;
-        transition: 0.3s;
-    }
-    /* .nav{
-        margin-top: 700%;
-        display:block;
-        border-left: white;
-        background-color: rgb(12, 12, 240);
-        color: white;
-        padding: 8px;
-    } */
+
+.coin-hidden{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
 }
